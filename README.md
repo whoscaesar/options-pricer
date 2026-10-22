@@ -17,6 +17,7 @@ Options pricing simulator in Python, built step by step.
 pip install -r requirements.txt
 python black_scholes.py
 python monte_carlo.py
+python visualize_mc.py   # creates monte_carlo.png
 ```
 
 Example output (S=100, K=100, T=1, r=5%, sigma=20%):
@@ -37,6 +38,8 @@ with d1 = [ln(S/K) + (r + σ²/2)T] / (σ√T) and d2 = d1 − σ√T.
 The put follows from put-call parity: C − P = S − K·e^(−rT).
 
 ## Monte Carlo convergence
+
+![Monte Carlo visualization](monte_carlo.png)
 
 Monte Carlo simulates stock prices at maturity, averages the discounted payoffs and converges to the Black-Scholes price as the number of simulations grows (error shrinks with 1/sqrt(n)):
 
