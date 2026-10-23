@@ -9,7 +9,7 @@ Options pricing simulator in Python, built step by step.
 - [x] Monte Carlo pricer with convergence check
 - [ ] Binomial tree (American options)
 - [ ] Implied volatility and volatility smile on live market data
-- [ ] Interactive Streamlit app
+- [x] Interactive Streamlit app
 
 ## Run it
 
@@ -18,6 +18,7 @@ pip install -r requirements.txt
 python black_scholes.py
 python monte_carlo.py
 python visualize_mc.py   # creates monte_carlo.png
+streamlit run app.py     # interactive app
 ```
 
 Example output (S=100, K=100, T=1, r=5%, sigma=20%):
@@ -27,6 +28,10 @@ Call price: 10.4506
 Put price:  5.5735
 Put-call parity gap (should be ~0): 0.00e+00
 ```
+
+## Interactive app
+
+`app.py` is a Streamlit app with sliders for spot, strike, maturity, rate and volatility. It shows the Black-Scholes and Monte Carlo price side by side, all five Greeks, a profit/payoff diagram with break-even, price vs spot, and simulated Monte Carlo paths.
 
 ## The model
 
